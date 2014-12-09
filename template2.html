@@ -7,18 +7,6 @@
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="text-editor/text-editor/style.css">
-	<link rel="stylesheet" href="text-editor/text-editor/codemirror.css">
-	<link rel="stylesheet" href="text-editor/text-editor/simple-hint.css">	
-	<script type="text/javascript" src="text-editor/text-editor/codemirror.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/javascript.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/css.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/xml.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/htmlmixed.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/simple-hint.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/zen_codemirror.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/downloadify.min.js"></script>
-	<script type="text/javascript" src="text-editor/text-editor/swfobject.js"></script>
     
     
 </head> 
@@ -32,22 +20,10 @@
     <h1>Header</h1>
   </div>
   <div data-role="content">
-<div id="toolbar">
-			<div id="editor-toolbar">
-				<h2 align="center"><span class="icon"></span>Editor</h2>
-				<ul>
-					<li id="download">Download</li>
-				</ul>
-			</div>
-			
-	</div>
-
-		<div class="clearfix"></div>
-	
-	<div id="ide">
-		<div id="editor">
-			<div class="container">
-				<textarea name="editor" id="editor-area" cols="30" rows="10">
+<div id="hasil" >Click Submit To Perview </div>
+  
+  <textarea name="tulis" cols="100" rows="20"  id="tulis" style="max-height:200px" overflow="scroll">
+  
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -91,7 +67,7 @@
 <!--------------Header--------------->
 <header>
 	<div class="wrap-header zerogrid">
-		<div id="logo"><a href="#"><img src="Template/zBasicH001_zerotheme.com/zBasicH001/images/logo.png"/></a></div>
+		<div id="logo"><a href="#"><img src=""/></a></div>
 		
 		<div id="search">
 			<div class="button-search"></div>
@@ -329,82 +305,29 @@ footer {background-color:#333;}
 </html>                
 
 </textarea>
-			</div>
-		</div>
-        <div id="preview-toolbar" align="center" style="background:#999">
-				<h2><span class="icon"></span>Preview</h2>
-			</div>
-		<div id="preview">
-        
-			<div class="container">
-				<iframe src frameborder="0" id="preview-area"></iframe>
-			</div>
-		</div>
-          <div data-role="footer">
-<div data-role="navbar">  
-        <ul>  
-              
-            <li><a href="#" data-rel="external" data-icon="info">Information </a></li>  
-              
-        </ul>  
-    </div>   
-    
-  </div>
-</div>
-	</div>
 
-	<script type="text/javascript">
-	
-      
-      var editor = CodeMirror.fromTextArea(document.getElementById('editor-area'), {
-        mode: 'text/html',
-        tabSize:8,
-        indentUnit:8,
-        matchBrackets: true,
-        lineNumbers:true,
-        onChange: function() {
-          clearTimeout(delay);
-          delay = setTimeout(updatePreview, 30);
-		  
-        },
-       	onKeyEvent: function() {
-			return zen_editor.handleKeyEvent.apply(zen_editor, arguments);
-		}
-      });
-      
-      function updatePreview() {
-        var previewFrame = document.getElementById('preview-area');
-        var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-        preview.open();
-        preview.write(editor.getValue());
-        preview.close();
-      }
-      setTimeout(updatePreview, 300);
-    	
-	Downloadify.create('download',{
-    filename: "index.html",
-    data: function(){
-    return editor.getValue();
-    },
-    onComplete: function(){
-    alert('Your file has been saved!');
-    },
-    onCancel: function(){
-    alert('You have cancelled the saving of this file.');
-    },
-    onError: function(){
-    alert('You must put something in the File Contents or there will be nothing to save!');
-    },
-    transparent: false,
-    swf: 'downloadify.swf',
-    downloadImage:'download.png',
-    width: 100,
-    height: 30,
-    transparent: true,
-    append: false
-    });
-	</script>
-    
+</div>
+
+
+<input type="submit" name="Submit" value="Submit" onclick="pasang()" >
+
+  <script language="javascript">
+
+function pasang(){
+
+document.getElementById('hasil').innerHTML=document.getElementById('tulis').value;
+
+}
+
+</script>
+
+<div data-role="footer">
+		<h4>Page Footer</h4>  
+  
+
+
+</div>
+</div>
 
 
 
