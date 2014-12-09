@@ -8,7 +8,18 @@
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
 
-
+<link rel="stylesheet" href="text-editor/text-editor/style.css">
+	<link rel="stylesheet" href="text-editor/text-editor/codemirror.css">
+	<link rel="stylesheet" href="text-editor/text-editor/simple-hint.css">	
+	<script type="text/javascript" src="text-editor/text-editor/codemirror.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/javascript.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/css.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/xml.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/htmlmixed.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/simple-hint.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/zen_codemirror.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/downloadify.min.js"></script>
+	<script type="text/javascript" src="text-editor/text-editor/swfobject.js"></script>
     
 
 
@@ -55,26 +66,7 @@
     <div class="redline"></div>
 	</div>
 	<div data-role="content">	
-	<div id="hasil" >Click Submit To Perview </div>
-  
-  <textarea name="tulis" cols="100" rows="20"  id="tulis" style="max-height:200px" overflow="scroll">
-    </textarea>
-
-
-
-
-<input type="submit" name="Submit" value="Submit" onclick="pasang()" >
-
-  <script language="javascript">
-
-function pasang(){
-
-document.getElementById('hasil').innerHTML=document.getElementById('tulis').value;
-
-}
-
-</script>
-	
+		
 	</div>
 	<div data-role="footer">
 		<h4></h4>
